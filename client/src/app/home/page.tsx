@@ -182,7 +182,7 @@ if (filterType === 'categories' && value === 'All') {
 
                     <div className="flex items-center gap-2">
                       <span className="text-lg font-bold text-gray-900">
-                        ₹{product.price.toLocaleString()}
+                        ${product.price.toLocaleString()}
                       </span>
                       <span className="text-sm text-gray-500 line-through">
                         ${product.originalPrice.toLocaleString()}

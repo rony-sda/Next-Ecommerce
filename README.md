@@ -31,43 +31,6 @@ A full-stack e-commerce platform built with Next.js, Express.js, and PostgreSQL.
 - **Access Control** - Manage user access and permissions
 - **Analytics Dashboard** - System-wide analytics and metrics
 
-## 📁 Project Structure
-
-```
-Next-Ecommerce/
-├── client/                     # Frontend Next.js application
-│   ├── src/
-│   │   ├── app/               # Next.js App Router pages
-│   │   │   ├── admin/         # Admin dashboard pages
-│   │   │   ├── auth/          # Authentication pages
-│   │   │   ├── cart/          # Shopping cart page
-│   │   │   ├── checkout/      # Checkout process
-│   │   │   ├── listing/       # Product listing pages
-│   │   │   ├── seller/        # Seller dashboard pages
-│   │   │   └── account/       # User account page
-│   │   ├── components/        # Reusable React components
-│   │   │   ├── admin/         # Admin-specific components
-│   │   │   ├── seller/        # Seller-specific components
-│   │   │   ├── home/          # Homepage components
-│   │   │   └── ui/            # UI component library
-│   │   ├── store/             # Zustand state management
-│   │   ├── utils/             # Utility functions
-│   │   └── action/            # Server actions
-│   ├── public/                # Static assets
-│   └── package.json
-├── server/                     # Backend Express.js application
-│   ├── src/
-│   │   ├── controllers/       # Route controllers
-│   │   ├── middlewares/       # Express middlewares
-│   │   ├── routes/            # API routes
-│   │   ├── config/            # Configuration files
-│   │   └── server.ts          # Main server file
-│   ├── prisma/                # Database schema and migrations
-│   ├── uploads/               # File upload storage
-│   └── package.json
-├── docker-compose.yml          # Database containerization
-└── README.md
-```
 
 ## 🏗️ Tech Stack
 
@@ -93,10 +56,6 @@ Next-Ecommerce/
 - **Cloudinary**
 - **Stripe**
 
-### DevOps & Tools
-
-- **Docker Compose** - Containerization
-- **Arcjet** - Security and rate limiting
 
 ## 🔌 API Endpoints
 
@@ -149,7 +108,7 @@ Next-Ecommerce/
 - `GET /api/dashboard/stats` - Get dashboard statistics
 - `GET /api/dashboard/sales` - Get sales analytics
 
-## Credentials
+## Admin Credentials
 
 - Mail - `admin@ecom.com`
 - Pass - `admin123`
@@ -160,8 +119,7 @@ Next-Ecommerce/
 
 - Node.js (v18 or higher)
 - npm or yarn
-- PostgreSQL
-- Docker (optional, for database)
+- Serverless DB Connection String Like - Neon or Supebase
 
 ### 1. Clone the Repository
 
@@ -170,16 +128,7 @@ git clone <repository-url>
 cd Next-Ecommerce
 ```
 
-### 2. Database Setup
-
-#### Option A: Using Docker (Recommended)
-
-```bash
-# Start PostgreSQL with Docker
-docker-compose up -d postgres
-```
-
-### 3. Backend Setup
+### 2. Backend Setup
 
 ```bash
 cd server
@@ -200,7 +149,7 @@ npm run prisma:seed
 npm run dev
 ```
 
-### 4. Frontend Setup
+### 3. Frontend Setup
 
 ```bash
 cd client
@@ -212,11 +161,11 @@ npm install
 npm run dev
 ```
 
-### 5. Access the Application
+### 4. Access the Application
 
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:3001
-- Database: localhost:5434 (if using Docker)
+
 
 ## 🔧 Environment Variables
 
@@ -226,7 +175,7 @@ Create `.env` files in both `client/` and `server/` directories:
 
 ```env
 # Database
-DATABASE_URL="postgresql://username:password@localhost:port/dbname"
+DATABASE_URL="your_db_uri"
 
 # JWT
 JWT_SECRET="your-super-secret-jwt-key"
